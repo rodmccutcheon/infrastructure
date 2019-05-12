@@ -1,0 +1,14 @@
+---
+version: "3.7"
+
+services:
+  jenkins:  
+    build: .
+    image: ortjenkins:1.0
+    ports:  
+      - "8082:8080"
+      - "50000:50000"  
+    volumes:  
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/bin/docker
+    container_name: ortjenkins
